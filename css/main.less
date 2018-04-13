@@ -1,0 +1,294 @@
+/* Colors */
+@black: #000;
+@rose: #DAD2E9;
+@blue: #CFE2F3;
+@gray: #EFEFEF;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.global-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 1284px;
+    width: 100%;
+    border: 1px solid @black;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+    font-size: 1vmax;
+    background-color: @blue;
+
+/* Header menu */
+
+    header {
+        display: flex;
+        flex-direction: column;
+        height: 40px;
+        ul {
+            display: inline-flex;
+            max-width: 1284px;
+            width: 100%;
+            list-style: none;
+            justify-content: center;
+            
+            li {
+                margin-left: 20px;
+                
+                a {
+                    text-decoration: none;
+                    color: @black;
+                    font-size: 1vmax;
+                    font-weight: 600;                    
+                    text-transform: uppercase;
+                    &:hover {
+                        color: green;
+                    }
+                }
+            }            
+        }        
+    }
+
+/* Hidden Sideblocks */
+
+.sideblocks__wrap {
+    position: relative;
+    z-index: 100;     
+  
+  .sidebar-left {
+    position: absolute;  
+    display: none;    
+    width: 0px;
+    border: 1px dashed #000;
+    height: 80vh;
+    background-color: #fff;
+  }
+  
+  .sidebar-right {
+    position: absolute;
+    display: none;
+    border: 1px dashed #000;     
+    right: 0px;
+    width: 0px;  
+    background-color: #fff;
+  }
+  .view-block {
+    display: block;
+    background-color: @gray;
+    max-width: 300px;
+    width: 100%;  
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+  }
+}
+  
+/* Description */
+
+    .description {
+        display: block;
+        padding: 40px 10px;         
+        margin: 0 10px;
+        border: 1px solid @black;           
+    }
+
+/* Main */
+
+    .wrapper__main {
+        display: flex;   
+        justify-content: space-between;
+        max-width: 1280px;
+        width: 100%;
+        .main {
+            display: block;            
+            width: 1024px;
+            padding: 10px;
+            p {
+               font-size: 1.2vmax;
+            }
+        }
+        aside {
+            display: block;
+            background-color: @rose;
+            margin: 10px;            
+            width: 200px;
+            height: 93.7vh;
+            border: 1px solid @black;
+        }
+    }
+
+/* Fixed right siteblock settings */
+
+    .rightbar-fixed {
+        position: fixed;
+        width: 200px;            
+        height: 100vh;    
+        left:73.4%;        
+        top: 0;
+        z-index: 110;
+    }
+
+/* Footer */
+
+    footer {
+        height: 30px;
+        border-top: 1px solid @black;
+    }
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1440px) {
+    .global-container {
+        max-width: 1280px;
+        .wrapper__main {
+            max-width: 1280px;
+            width: 100%;
+            .main {
+                max-width: 1024px;
+                width: 100%;
+            }
+        }
+        .view-block {
+            width: 30%;
+        }
+        aside {            
+            width: 200px;
+                           
+            height: 100vh;    
+            margin-right: 30px;
+            
+        }
+        .rightbar-fixed {
+            width: 70%; 
+            left:79%;        
+            top: 0;            
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .global-container {
+        max-width: 1024px;
+        width: 100%;
+        .wrapper__main {
+            max-width: 100%;
+            .main {
+                max-width: 77%;
+            }
+        }
+        .view-block {
+            width: 33%;
+        }
+        aside {            
+            width: 100%;                
+            height: 110vh;                      
+        }
+        .rightbar-fixed {
+            width: 50%; 
+            left:78.3%;        
+            top: 0;            
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .global-container {
+        max-width: 768px;
+        width: 100%;
+        .wrapper__main {
+            max-width: 100%;
+            .main {
+                max-width: 69%;
+            }
+        }
+        .view-block {
+            width: 30vmax;
+        }
+        aside {            
+            width: 100%;                
+            height: 100vh;                      
+        }
+        .rightbar-fixed {
+            width: 50%; 
+            left:71%;                        
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .global-container {
+        max-width: 425px;
+        width: 100%;
+        .wrapper__main {
+            flex-direction: column-reverse;
+            p {
+                width: 400px;
+                
+            }
+            aside {            
+                width: 400px;                
+                height: 30vh;                      
+            }
+        }
+        .view-block {
+            width: 100%;
+        }
+        
+        .rightbar-fixed {
+            left:0.4%;                      
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .global-container {
+        max-width: 375px;
+        width: 100%;
+        .wrapper__main {
+            flex-direction: column-reverse;
+            p {
+                width: 355px;
+                
+            }
+            aside {            
+                width: 350px;                
+                height: 30vh;                      
+            }
+        }
+        
+        
+        .rightbar-fixed {
+            width: 355px; 
+            left:0.40%;        
+            top: 0;            
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .global-container {
+        max-width: 320px;
+        width: 100%;
+        
+        .wrapper__main {            
+            flex-direction: column-reverse;
+            p {
+                width: 300px;                
+            }
+            aside {
+                height: 30vh;
+                width: 295px;
+            }
+        }
+        .view-block {
+            width: 45%;
+        }
+        
+        .rightbar-fixed {             
+            left:0.45%;                     
+        }
+    }
+}
